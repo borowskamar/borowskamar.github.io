@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Data Cleaning in SQL</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header"></header>
+
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li class="active"><a href="dogbreeds.html">Data Cleaning in SQL</a></li>
+          <li><a href="dogbreeds.html">Back to all projects</a></li>
+        </ul>
+        <ul class="icons">
+          <li>
+            <a
+              href="https://github.com/borowskamar/PortfolioProjects"
+              target="_blank"
+              class="icon brands alt fa-github"
+              ><span class="label">Github</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://pl.linkedin.com/in/marta-borowska-841886214/"
+              target="_blank"
+              class="icon brands alt fa-linkedin"
+              ><span class="label">Linkedin</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main -->
+      <div id="main">
+        <!-- Post -->
+        <section class="post">
+          <header class="major">
+            <h1>Data Cleaning in SQL<br /></h1>
+          </header>
+<h3 style="margin-top: 30px">🎯 Goal and Research Questions</h3>
+<p>The goal of this project was to clean, transform, and analyze a dog breeds dataset using Microsoft SQL Server. The primary research questions included:</p>
+<ul>
+<li>Which countries have the largest number of dog breeds?</li>
+<li>What are the most common health problems among dog breeds?</li>
+<li>What is the average longevity of dog breeds?</li>
+<li>What is the average height of dog breeds?</li>
+</ul>
+
+<h3 style="margin-top: 30px">📊 Data Sources</h3>
+<p>The dataset used is a dog breeds dataset from <strong>Kaggle</strong>, stored in Microsoft SQL Server under the table <code>PortfolioProject.dbo.DogBreeds</code>. It includes columns such as breed name, country of origin, common health problems, longevity, and height.</p>
+
+
+<h3 style="margin-top: 30px">🔄 Process (Cleaning, Transformation, Exploration)</h3>
+<ul>
+<li>Imported the dataset into SQL Server and performed initial exploration using <code>SELECT *</code> and <code>COUNT</code></li>
+<li>Identified top countries by breed count using <code>GROUP BY Country_of_Origin</code> and <code>ORDER BY</code></li>
+<li>Split the <code>Common_Health_Problems</code> column into three separate columns (<code>Health_Problem_1</code>, <code>Health_Problem_2</code>, <code>Health_Problem_3</code>) using <code>PARSENAME</code> after replacing commas with periods</li>
+<li>Trimmed spaces and standardized naming (e.g., converted health problem names to lowercase)</li>
+<li>Unified synonymous health problems (e.g., "Eye issues" → "Eye problems")</li>
+<li>Dropped the original <code>Common_Health_Problems</code> column to reduce redundancy</li>
+<li>Calculated the most common health problems by combining all three new columns using <code>UNION ALL</code> and <code>GROUP BY</code></li>
+<li>Transformed longevity and height ranges into numerical averages for further analysis</li>
+<li>Performed exploratory analysis to understand distributions and trends in breed characteristics</li>
+</ul>
+
+<h3 style="margin-top: 30px">📈 Results / Findings</h3>
+<ul>
+<li>Identified the countries with the largest number of dog breeds, highlighting global breed diversity</li>
+<li>Determined the most common health problems across all breeds</li>
+<li>Calculated average longevity and height for breeds, providing insights into typical breed characteristics</li>
+<li>Cleaned and transformed the dataset to make it analysis-ready, enabling easier querying and aggregation</li>
+</ul>
+
+
+<h3 style="margin-top: 30px">⚠️ Limitations and Future Work</h3>
+<ul>
+<li>The dataset contains only breed-level data, so individual variation is not captured</li>
+<li>Some health issues may have been oversimplified when splitting and standardizing health problem columns</li>
+<li>Ranges for longevity and height are averaged, which may lose some variability</li>
+<li>Future work could integrate additional datasets (e.g., behavioral traits, exercise needs, diet) for deeper insights</li>
+<li>Advanced analysis, such as clustering breeds by health risk or predicting breed longevity based on multiple features, could be explored</li>
+</ul>
+
+		  <ul class="actions special">
+              <li>
+                <a
+                  href="https://github.com/borowskamar/PortfolioProjects/blob/main/Shelter.ipynb"
+                  target="_blank"
+                  class="button"
+                  >View Full Project on Github</a
+                >
+              </li>
+            </ul>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <section class="split contact">
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <li>
+                <a
+                  href="https://github.com/borowskamar/PortfolioProjects"
+                  target="_blank"
+                  class="icon brands alt fa-github"
+                  ><span class="label">Github</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://pl.linkedin.com/in/marta-borowska-841886214/"
+                  target="_blank"
+                  class="icon brands alt fa-linkedin"
+                  ><span class="label">Linkedin</span></a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+      </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

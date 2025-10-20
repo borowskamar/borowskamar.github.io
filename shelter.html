@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Dog Adoptions Project</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header"></header>
+
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li class="active"><a href="shelter.html">Dog adoptions</a></li>
+          <li><a href="index.html">Back to all projects</a></li>
+        </ul>
+        <ul class="icons">
+          <li>
+            <a
+              href="https://github.com/borowskamar/PortfolioProjects"
+              target="_blank"
+              class="icon brands alt fa-github"
+              ><span class="label">Github</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://pl.linkedin.com/in/marta-borowska-841886214/"
+              target="_blank"
+              class="icon brands alt fa-linkedin"
+              ><span class="label">Linkdein</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main -->
+      <div id="main">
+        <!-- Post -->
+        <section class="post">
+          <header class="major">
+            <h1>Analysis of dog adoptions with Python<br /></h1>
+          </header>
+          <h3 style="margin-top: 30px">🎯Goal and Research Questions</h3>
+          The goal of this project was to understand the factors influencing
+            the length of stay of dogs in a shelter and identify patterns in dog
+            adoptions. Key research questions include:
+            <ul>
+            <li> How long do dogs stay in the shelter before being adopted? </li>
+           <li> Are there differences in stay duration based on breed, age, gender,
+            or weight? </li>
+            <li>  Which dog characteristics are associated with
+            faster adoption? </li>
+             <li> Do dogs with black fur wait longer for adoption? </li>
+          </ul>
+          <h3>📊 Data Sources</h3>
+          <p>
+            The dataset comes from a Warsaw animal shelter and contains
+            information about: </p>
+            <ul>
+          <li> Intake and adoption dates</li> <li> 
+          Breed, age, gender and weight of
+            the dogs</li> 
+            <li>Fur color (black/not black)
+           </li>
+           <li>Return status (returned/not returned) </li>
+           Data was provided in CSV format and loaded into Python for
+            analysis. 
+          </ul>
+
+          <h3 style="margin-top: 30px">🔄 Process (ETL, Transformations, Exploration, Modeling)</h3>
+          <p>
+<h4 style="margin-top: 30px">🔧 ETL and Transformations </h4>
+<ul>
+ <li>Loaded data from CSV</li> 
+<li>Removed duplicates, missing values and illogical values</li>
+<li>Converted data types (e.g., dates to datetime)</li>
+<li>Calculated the length of stay in the shelter for each dog</li>
+<li>Handled outliers</li>
+</ul>
+<h4 style="margin-top: 30px">🔍 Exploratory Data Analysis </h4>
+<ul>
+<li>Identified correlations between dog characteristics and adoption speed</li>
+<li>Investigated trends in adoptions (e.g., by month)</li>
+<li>Analyzed adoption return rates</li>
+<li>Analyzed distributions of days spent in the shelter, weight, age, gender and breed</li>
+
+</ul>
+<h4 style="margin-top: 30px">🤖 Modeling </h4>
+<ul>
+<li>Started with Linear Regression to test the impact of age and weight on shelter stay, then expanded the model to include gender, fur color, breed status, and return history</li>
+<li>Created interaction features (e.g., age × weight, male × black fur, small & young dogs) to capture combined effects</li>
+<li>Applied Random Forest and XGBoost to capture non-linear relationships and interactions. Hyperparameter tuning was used to improve predictive performance</li>
+<li>Evaluated all models using Mean Absolute Error (MAE) and R²</li>
+</ul>
+		  </p>
+
+          <h3 style="margin-top: 30px">📈 Results and Findings</h3>
+          <p>
+			<ul> 
+        <li>Age and weight are the strongest predictors: older and heavier dogs tend to stay longer</li>
+<li>Physical features (sex, fur color, purebred status) have smaller but noticeable effects</li>
+<li>Interaction terms improved model accuracy, highlighting that combinations of traits influence adoption speed</li>
+<li>XGBoost achieved the best performance after tuning: R² = 0.34, MAE ≈ 42 days, showing that these factors explain about one-third of the variation in shelter stay duration</li>
+<li>Seasonal factors and adoption year/month had minimal predictive value</li>
+      </ul>
+		  </p>
+
+          <h3 style="margin-top: 30px">⚠️ Limitations and Future Work</h3>
+          <p>
+<h4> Limitations:</h4>
+<ul>
+<li>The dataset is limited to a single shelter, which may reduce generalizability</li>
+<li>Key factors such as behavioral traits, health status, and promotional efforts were not available</li>
+<li>Models explain only a portion of the variance (R² ≈ 0.34 for the best model), indicating that many other factors influence shelter stay</li>
+
+</ul>
+<h4 style="margin-top: 30px"> Future Work:</h4>
+<ul>
+  
+<li>Expand the analysis to multiple shelters for a more representative understanding</li>
+<li>Include additional features such as temperament, medical history, and adoption campaigns</li>
+<li>Experiment with advanced models and ensemble techniques, including deep learning, to improve predictive accuracy</li>
+<li>Investigate seasonal and local community effects more deeply to guide shelter strategies</li>
+
+</ul>
+
+		  </p>
+
+		  <ul class="actions special">
+              <li>
+                <a
+                  href="https://github.com/borowskamar/PortfolioProjects/blob/main/Shelter.ipynb"
+                  target="_blank"
+                  class="button"
+                  >View Full Project on Github</a
+                >
+              </li>
+            </ul>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <section class="split contact">
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <li>
+                <a
+                  href="https://github.com/borowskamar/PortfolioProjects"
+                  target="_blank"
+                  class="icon brands alt fa-github"
+                  ><span class="label">Github</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://pl.linkedin.com/in/marta-borowska-841886214/"
+                  target="_blank"
+                  class="icon brands alt fa-linkedin"
+                  ><span class="label">Linkedin</span></a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+      </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

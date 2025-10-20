@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Covid 19 Data Exploration</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header"></header>
+
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li class="active"><a href="covid.html">Covid 19</a></li>
+          <li><a href="index.html">Back to all projects</a></li>
+        </ul>
+        <ul class="icons">
+          <li>
+            <a
+              href="https://github.com/borowskamar/PortfolioProjects"
+              target="_blank"
+              class="icon brands alt fa-github"
+              ><span class="label">Github</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://pl.linkedin.com/in/marta-borowska-841886214/"
+              target="_blank"
+              class="icon brands alt fa-linkedin"
+              ><span class="label">Linkedin</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main -->
+      <div id="main">
+        <!-- Post -->
+        <section class="post">
+          <header class="major">
+            <h1>Covid 19 data exploration<br /></h1>
+          </header>
+<h3 style="margin-top: 30px">🎯 Goal and Research Questions</h3>
+<p>The goal of this project was to clean, transform, and analyze COVID-19 data to understand infection, death, and vaccination trends globally and for specific countries. The main research questions were:</p>
+<ul>
+<li>Which countries and continents experienced the highest infection and death rates?</li>
+<li>What percentage of the population has been vaccinated over time?</li>
+<li>How do new cases and deaths correlate with vaccination progress?</li>
+<li>What trends can be observed at global, continental, and national levels?</li>
+</ul>
+
+<h3 style="margin-top: 30px">📊 Data Sources</h3>
+<p>The data was sourced from <a href="https://ourworldindata.org/covid-deaths" target="_blank">Our World in Data – COVID-19 dataset</a> and includes:</p>
+<ul>
+<li><code>CovidDeaths</code>: Daily counts of COVID-19 cases, deaths, and population per location</li>
+<li><code>CovidVaccinations</code>: Daily vaccination counts per location</li>
+<li>Both tables were stored in Microsoft SQL Server under the <code>PortfolioProject.dbo</code> schema</li>
+</ul>
+
+<h3 style="margin-top: 30px">🔄 Process (Cleaning, Transformation, Exploration)</h3>
+<ul>
+<li>Selected relevant columns for analysis, including location, continent, date, total and new cases/deaths, and population</li>
+<li>Calculated death percentages for specific countries (e.g., Poland) using <code>total_deaths / total_cases * 100</code></li>
+<li>Computed infection rates relative to population for countries and identified countries with the highest infection rates</li>
+<li>Cleaned data issues, such as rows where continent names were incorrectly added to the location column</li>
+<li>Aggregated total deaths by continent and by country</li>
+<li>Joined deaths and vaccinations tables to analyze vaccination progress over time</li>
+<li>Calculated rolling totals of vaccinated individuals per country using <code>SUM() OVER (PARTITION BY location ORDER BY date)</code></li>
+<li>Computed percentage of population vaccinated based on rolling totals</li>
+<li>Created a view <code>PercentPopulationVaccinatedView</code> for easier future querying and visualization</li>
+<li>Performed exploratory analysis on global, continental, and national trends in cases, deaths, and vaccinations</li>
+</ul>
+
+<h3 style="margin-top: 30px">📈 Results and Findings</h3>
+<ul>
+<li>Identified countries with the highest infection rates relative to population</li>
+<li>Determined countries and continents with the highest total deaths</li>
+<li>Tracked vaccination progress, including cumulative counts and percentage of population vaccinated over time</li>
+<li>Observed trends linking vaccination progress with new cases and deaths at global and national levels</li>
+<li>Created clean, transformed, and query-ready datasets and views to support further analysis and visualizations</li>
+</ul>
+
+<h3 style="margin-top: 30px">⚠️ Limitations and Future Work</h3>
+<ul>
+<li>Data quality issues, including missing continent information and mislabelled location names, required cleaning</li>
+<li>Analysis is limited to reported data; underreporting or delays in reporting may affect accuracy</li>
+<li>Vaccination data does not include information on vaccine type or effectiveness</li>
+<li>Future work could include combining with mobility or testing data for more detailed modeling</li>
+<li>Advanced time series or predictive models could be applied to forecast cases, deaths, or vaccination outcomes</li>
+</ul>
+
+
+		  <ul class="actions special">
+              <li>
+                <a
+                  href="https://github.com/borowskamar/PortfolioProjects/blob/main/Shelter.ipynb"
+                  target="_blank"
+                  class="button"
+                  >View Full Project on Github</a
+                >
+              </li>
+            </ul>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <section class="split contact">
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <li>
+                <a
+                  href="https://github.com/borowskamar/PortfolioProjects"
+                  target="_blank"
+                  class="icon brands alt fa-github"
+                  ><span class="label">Github</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://pl.linkedin.com/in/marta-borowska-841886214/"
+                  target="_blank"
+                  class="icon brands alt fa-linkedin"
+                  ><span class="label">Linkedin</span></a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+      </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

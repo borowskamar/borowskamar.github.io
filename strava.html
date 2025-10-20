@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Strava Running Data Project</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header"></header>
+
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li class="active"><a href="strava.html">Strava running data</a></li>
+          <li><a href="index.html">Back to all projects</a></li>
+        </ul>
+        <ul class="icons">
+          <li>
+            <a
+              href="https://github.com/borowskamar/PortfolioProjects"
+              target="_blank"
+              class="icon brands alt fa-github"
+              ><span class="label">Github</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://pl.linkedin.com/in/marta-borowska-841886214/"
+              target="_blank"
+              class="icon brands alt fa-linkedin"
+              ><span class="label">Linkedin</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main -->
+      <div id="main">
+        <!-- Post -->
+        <section class="post">
+          <header class="major">
+            <h1>Analysing Strava running data
+in Python<br /></h1>
+          </header>
+<h3 style="margin-top: 30px">🎯 Goal and Research Questions</h3>
+<p>The goal of this project was to analyze personal running activity data to understand trends, performance improvements, and training patterns over time. Key research questions included:</p>
+<ul>
+  <li>How has the total distance and frequency of runs changed over time?</li>
+  <li>Has my average running pace improved, and what trends can be observed in pace and heart rate?</li>
+  <li>How do variables like distance, elapsed time, and heart rate relate to one another?</li>
+  <li>Are there noticeable outliers or anomalies in performance, and what might explain them?</li>
+</ul>
+
+<h3 style="margin-top: 30px">📊 Data Sources</h3>
+<p>The dataset comes from personal activity tracking and contains 214 entries across 94 columns. For this analysis, a subset of meaningful variables was used, including:</p>
+<ul>
+  <li>Activity date and type</li>
+  <li>Elapsed time and moving time</li>
+  <li>Distance and average pace</li>
+  <li>Average and maximum heart rate</li>
+  <li>Calories and total steps</li>
+</ul>
+<p>All data was imported in CSV format and loaded into Python for cleaning, transformation, and analysis.</p>
+
+<h3 style="margin-top: 30px">🔄 Process (ETL, Transformations, Exploration)</h3>
+<h4 style="margin-top: 30px">🔧 ETL and Transformations </h4>
+
+<ul>
+  <li>Selected only relevant columns for running activities.</li>
+  <li>Handled missing values: calories were imputed based on similar distances; rows with missing average heart rate were dropped.</li>
+  <li>Converted dates to <code>datetime</code> objects and extracted day, month, year, and time.</li>
+  <li>Converted elapsed and moving times to minutes and calculated average pace (<code>moving time / distance</code>).</li>
+  <li>Detected and noted outliers, particularly in average pace, corresponding to early walk/run sessions.</li>
+</ul>
+
+<h4 style="margin-top: 30px">🔍 Exploratory Data Analysis </h4>
+<ul>
+  <li>Visualized pairwise relationships between distance, average pace, heart rate, and elapsed time.</li>
+  <li>Examined correlations: faster paces corresponded with higher heart rates; longer distances led to longer elapsed times.</li>
+  <li>Tracked total distance per month and year to identify trends in training volume.</li>
+  <li>Calculated a 10-run rolling average of pace to smooth fluctuations and detect long-term improvements.</li>
+</ul>
+
+<h3 style="margin-top: 30px">📈 Results and Findings</h3>
+<ul>
+  <li>Average run duration was ~43 minutes, covering ~5.7 km at a pace of ~7.5 min/km.</li>
+  <li>Most runs ranged between 3.8–6.3 km, with heart rate averaging 145 bpm and peaks up to 168 bpm.</li>
+  <li>Step counts ranged around 6,800 per run, reaching >26,000 during long sessions.</li>
+  <li>Total running distance increased significantly from 2024 to early 2025, with March 2025 being the highest month (~100+ km).</li>
+  <li>Rolling average pace improved over time, dropping from ~10 min/km in early sessions to ~7 min/km by early 2025, indicating endurance and performance improvements.</li>
+  <li>Temporary increases in pace occurred during longer runs (half-marathon preparation), reflecting strategic low-intensity training.</li>
+  <li>Outliers in pace were explained by early walk/run sessions and training adaptations.</li>
+</ul>
+
+<h3 style="margin-top: 30px">⚠️ Limitations and Future Work</h3>
+<ul>
+  <h4> Limitations:</h4> <li>Dataset only reflects personal running activity, limiting generalizability. </li>
+  <li>Some data points were missing (e.g., calories, heart rate), requiring imputation or removal. </li> <li>Analysis does not incorporate external factors such as weather, terrain, or fatigue levels.</li> </ul>
+ <ul><h4> Future Work:</h4> <li> Include additional metrics such as heart rate zones, elevation gain, or running surface
+    <li>Apply predictive models to estimate performance improvement or injury risk</li>
+       <li>Visualize seasonal and weekly training patterns; compare running efficiency and pace progression relative to training interventions (e.g., zone 2 workouts, long runs).</li>
+</ul>
+
+
+		  <ul class="actions special">
+              <li>
+                <a
+                  href="https://github.com/borowskamar/PortfolioProjects/blob/main/Shelter.ipynb"
+                  target="_blank"
+                  class="button"
+                  >View Full Project on Github</a
+                >
+              </li>
+            </ul>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <section class="split contact">
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <li>
+                <a
+                  href="https://github.com/borowskamar/PortfolioProjects"
+                  target="_blank"
+                  class="icon brands alt fa-github"
+                  ><span class="label">Github</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://pl.linkedin.com/in/marta-borowska-841886214/"
+                  target="_blank"
+                  class="icon brands alt fa-linkedin"
+                  ><span class="label">Linkedin</span></a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+      </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
